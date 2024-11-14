@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'mihajlo/vbis',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '7ee0eb924a398820b77b5a557cfd3923ebbdb164',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'mihajlo/vbis' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '7ee0eb924a398820b77b5a557cfd3923ebbdb164',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

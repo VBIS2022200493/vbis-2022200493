@@ -9,7 +9,7 @@
 
         public function readUser(){
 
-            return "User";
+            echo "Mihajlo Markovic";
 
         }
 
