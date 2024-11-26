@@ -16,4 +16,9 @@
 
         }
 
+        public function accessRole(){
+
+            return [];
+
+        }
     }

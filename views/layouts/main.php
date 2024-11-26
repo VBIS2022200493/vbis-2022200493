@@ -53,19 +53,19 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="/login">
+                <a class="nav-link " href="/products">
                     <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-single-copy-04 text-dark text-sm opacity-10"></i>
+                        <i class="ni ni-folder-17 text-dark text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Login</span>
+                    <span class="nav-link-text ms-1">Products</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="/registration">
+                <a class="nav-link " href="/processLogout">
                     <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="ni ni-collection text-dark text-sm opacity-10"></i>
+                        <i class="ni ni-user-run text-dark text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Registration</span>
+                    <span class="nav-link-text ms-1">Log out</span>
                 </a>
             </li>
         </ul>

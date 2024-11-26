@@ -65,4 +65,9 @@
 
         }
 
+        public function accessRole(){
+
+            return ['Administrator'];
+
+        }
     }

@@ -11,7 +11,7 @@
 
         public $errors;
         private DbConnection $db;
-        private mysqli $con;
+        public mysqli $con;
         public function __construct(){
             $this->db = new DbConnection();
             $this->con = $this->db->connect();
