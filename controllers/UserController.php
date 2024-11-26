@@ -1,7 +1,6 @@
 <?php
     namespace app\controllers;
     use app\core\BaseController;
-    use app\core\DbConnection;
     use app\models\UserModel;
 
     class UserController extends BaseController{
@@ -9,13 +8,38 @@
         public function readUser(){
 
             $model = new UserModel();
-            $result = $model->get();
-            $model->mapData($result);
-            echo "<pre>";
-            var_dump($result);
-            exit;
+            $model->one("where user_id = 2");
 
             $this->view->render('getUser', 'main', $model);
+
+        }
+
+        public function readAll(){
+
+            $model = new UserModel();
+            $results = $model->all("");
+
+            $this->view->render('users', 'main', $results);
+
+        }
+
+        public function updateUser(){
+
+            $model = new UserModel();
+            $model->mapData($_GET);
+            $model->one("where user_id = $model->user_id");
+
+            $this->view->render('updateUser', 'main', $model);
+
+        }
+
+        public function processUpdateUser(){
+
+            $model = new UserModel();
+            $model->mapData($_POST);
+            $model->update("where user_id = $model->user_id");
+
+            header("location:" . "/users");
 
         }
 

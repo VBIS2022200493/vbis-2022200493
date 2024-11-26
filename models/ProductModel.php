@@ -7,6 +7,7 @@
 
     class ProductModel extends BaseModel {
 
+        public int $product_id;
         public string $name;
         public string $description;
         public int $price;
@@ -17,6 +18,19 @@
             return "product";
 
         }
+
+        public function readColumns(){
+
+            return ["product_id", "name", "description"];
+
+        }
+
+        public function editColumns(){
+
+            return ["name", "description"];
+
+        }
+
     }
 
 ?>
