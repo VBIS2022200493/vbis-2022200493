@@ -8,8 +8,8 @@
     class ProductModel extends BaseModel {
 
         public int $product_id;
-        public string $name;
-        public string $description;
+        public string $name = '';
+        public string $description = '';
         public int $price;
 
 
@@ -28,6 +28,17 @@
         public function editColumns(){
 
             return ["name", "description"];
+
+        }
+
+        public function validationRules(): array{
+
+            return[
+
+                "name" => [self::RULE_REQUIRED],
+                "description" => [self::RULE_REQUIRED],
+
+            ];
 
         }
 
