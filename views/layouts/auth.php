@@ -55,7 +55,7 @@
 
                             ?>
                             <li class="nav-item me-0">
-                                <a class="nav-link me-0" href="/logout">
+                                <a class="nav-link me-0" href="/processLogout">
                                     <i class="ni ni-user-run opacity-6 text-dark me-1"></i>
                                     Log out
                                 </a>
