@@ -16,12 +16,23 @@
 
             $model->mapData($_POST);
 
-            $model->one("where date(reservation_time) = '$model->reservation_time' and service_id = $model->service_id ");
+
+
+            $model->one("where reservation_time = '$model->reservation_time' and service_id = $model->service_id ");
 
             if(isset($model->reservation_id)){
                 Application::$app->session->set('errorNotification', 'Vec postoji zakazani termin za izabrani datum!');
                 header("location:" . "/servicesForUser");
+                exit;
             }
+
+            if($model->reservation_time == ""){
+                Application::$app->session->set('errorNotification', 'Morate izabrati datum i vreme termina!');
+                header("location:" . "/servicesForUser");
+                exit;
+            }
+
+
 
             $sessions = Application::$app->session->get('user');
 
@@ -31,6 +42,9 @@
 
             }
 
+            $serviceModel = new ServiceModel();
+            $serviceModel->one("where service_id = '$model->service_id'");
+            $model->price = $serviceModel->price;
 
             $model->insert();
             Application::$app->session->set('successNotification', 'Uspesno rezervisan termin');

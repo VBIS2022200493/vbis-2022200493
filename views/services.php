@@ -1,7 +1,7 @@
 <?php
 
-use app\models\ServiceModel;
-/**  @var $params ServiceModel */
+/** @var $params array
+ */
 
 ?>
 

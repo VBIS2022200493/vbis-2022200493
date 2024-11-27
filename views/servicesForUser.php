@@ -1,4 +1,9 @@
+<?php
 
+    /** @var $params array
+    */
+
+?>
 
 
 <div class="overflow-scroll pt-7" style="max-height: 100vh;">
@@ -13,7 +18,7 @@
                     <input type='hidden' name='service_id' value='$parm[service_id]'>
                     <div class='row g-0'>
                         <div class='col-md-4'>
-                            <img src='$parm[service_img]' class='img-fluid rounded-start' alt='...'>
+                            <img src='../assets/uploads/$parm[service_img]' class='img-fluid rounded-start' alt='...'>
                         </div>
                         <div class='col-md-8'>
                             <div class='card-body p-2'>
@@ -23,7 +28,7 @@
                             <div class='card-footer p-2'>
                                 <div class='row'>
                                     <div class='col-md-6 d-flex justify-content-center align-items-center'>
-                                        <input type='date' name='reservation_time' class='form-control mb-3 mb-md-0 datetime-picker-helper'/>
+                                        <input type='text' placeholder='Pick time' name='reservation_time' class='form-control mb-3 mb-md-0 datetime-picker-helper'/>
                                     </div>
                                     <div class='col-md-6  d-flex justify-content-center align-items-center'>
                                         <button class='btn btn-sm btn-primary mb-0'>Reserve</button>

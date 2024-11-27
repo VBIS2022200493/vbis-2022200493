@@ -5,7 +5,7 @@ use app\models\ServiceModel;
 
 ?>
 <div class="card">
-    <form action="/processCreateService" method="POST">
+    <form action="/processCreateService" method="POST" enctype="multipart/form-data">
         <div class="card-header pb-0">
             <div class="d-flex align-items-center">
                 <p class="mb-0">Create Service</p>
@@ -53,6 +53,36 @@ use app\models\ServiceModel;
                         if ($params != null && $params->errors != null) {
                             foreach ($params->errors as $attribute => $error) {
                                 if($attribute == 'location') {
+                                    echo "<span class='text-danger'>$error[0]</span>";
+                                }
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-control-label">Image</label>
+                        <input type="file" class="form-control" name="file">
+                        <?php
+                        if ($params != null && $params->errors != null) {
+                            foreach ($params->errors as $attribute => $error) {
+                                if ($attribute == 'file') {
+                                    echo "<span class='text-danger'>$error[0]</span>";
+                                }
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="example-text-input" class="form-control-label">Price</label>
+                        <input name="price" class="form-control" type="text" value="<?php echo $params->price; ?>" onfocus="focused(this)" onfocusout="defocused(this)">
+                        <?php
+                        if ($params != null && $params->errors != null) {
+                            foreach ($params->errors as $attribute => $error) {
+                                if($attribute == 'price') {
                                     echo "<span class='text-danger'>$error[0]</span>";
                                 }
                             }

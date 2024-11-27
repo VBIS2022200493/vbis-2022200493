@@ -1,7 +1,7 @@
 <?php
 
-use app\models\ProductModel;
-/**  @var $params ProductModel */
+/** @var $params array
+ */
 
 ?>
 

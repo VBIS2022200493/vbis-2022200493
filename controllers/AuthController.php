@@ -57,6 +57,7 @@
 
             if(Application::$app->session->get('user')){
                 header("location:" . "/");
+                exit;
             }
             $this->view->render('login', 'auth', new LoginModel());
 

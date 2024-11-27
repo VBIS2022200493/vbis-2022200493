@@ -12,6 +12,7 @@
         public int $user_id;
 
         public int $service_id;
+        public int $price;
 
         public function tableName(){
 
@@ -21,13 +22,13 @@
 
         public function readColumns(){
 
-            return ['reservation_id', 'reservation_time', 'user_id', 'service_id'];
+            return ['reservation_id', 'reservation_time', 'user_id', 'service_id', 'price'];
 
         }
 
         public function editColumns(){
 
-            return ['reservation_time', 'user_id', 'service_id'];
+            return ['reservation_time', 'user_id', 'service_id', 'price'];
 
         }
 

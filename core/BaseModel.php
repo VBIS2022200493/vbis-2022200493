@@ -11,6 +11,8 @@
 
         public const RULE_UNIQUE_EMAIL = "rule_unique_email";
 
+        public const GREATER_THEN_ZERO = "greater_then_zero";
+
         public $errors;
         private DbConnection $db;
         public mysqli $con;
@@ -158,6 +160,11 @@
                     if ($rule == self::RULE_UNIQUE_EMAIL){
                         if($this->checkUniqueEmail($value)){
                             $this->errors[$attribute][] = "This email already exists";
+                        }
+                    }
+                    if ($rule == self::GREATER_THEN_ZERO){
+                        if($value <= 0){
+                            $this->errors[$attribute][] = "Price must be grater than zero!";
                         }
                     }
 

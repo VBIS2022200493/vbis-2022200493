@@ -1,7 +1,7 @@
 <?php
 
-use app\models\UserModel;
-/**  @var $params UserModel */
+/** @var $params array
+ */
 
 ?>
 
