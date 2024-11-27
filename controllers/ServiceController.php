@@ -19,6 +19,16 @@
 
         }
 
+        public function listForUsers(){
+
+            $model = new ServiceModel();
+
+            $result = $model->all("");
+
+            $this->view->render('servicesForUser', 'auth', $result);
+
+        }
+
         public function create(){
 
             $model = new ServiceModel();
