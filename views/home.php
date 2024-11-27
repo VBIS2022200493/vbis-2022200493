@@ -22,7 +22,7 @@
                         </div>
                         <div class='col-md-8'>
                             <div class='card-body p-2'>
-                                <p class='card-title p-0 m-0'>$parm[service_name]</p>
+                                <p class='card-title p-0 m-0'>$parm[service_name] - $parm[price]$</p>
                                 <p class='card-text p-0 m-0'>$parm[store_name] - $parm[location]</p>
                             </div>
                             <div class='card-footer p-2'>

@@ -5,11 +5,12 @@
     use app\controllers\AuthController;
     use app\controllers\HomeController;
     use app\controllers\ProductController;
-use app\controllers\ReservationController;
-use app\controllers\ServiceController;
+    use app\controllers\ReservationController;
+    use app\controllers\ServiceController;
     use app\controllers\UserController;
+use app\controllers\UserReportController;
 use app\controllers\UserServicesController;
-use app\core\Application;
+    use app\core\Application;
 
     $app = new Application();
 
@@ -44,6 +45,10 @@ use app\core\Application;
 
     $app->router->get("/servicesForUser", [UserServicesController::class, 'listForUsers']);
     $app->router->post("/processReservation", [ReservationController::class, 'processReservation']);
+
+    $app->router->get("/myReports", [UserReportController::class, 'myReports']);
+    $app->router->get("/getNumberOfReservationsPerMonth", [UserReportController::class, 'getNumberOfReservationsPerMonth']);
+    $app->router->get("/getPricePerMonth", [UserReportController::class, 'getPricePerMonth']);
 
 
 
