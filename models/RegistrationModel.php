@@ -4,7 +4,7 @@
 
     use app\core\BaseModel;
 
-    class AuthModel extends BaseModel {
+    class RegistrationModel extends BaseModel {
 
         public int $user_id;
         public string $email = '';
@@ -33,7 +33,7 @@
 
             return[
 
-                "email" => [self::RULE_REQUIRED, self::RULE_EMAIL],
+                "email" => [self::RULE_REQUIRED, self::RULE_EMAIL, self::RULE_UNIQUE_EMAIL],
                 "password" => [self::RULE_REQUIRED]
 
             ];

@@ -1,17 +1,8 @@
-<!--
-=========================================================
-* Argon Dashboard 3 - v2.1.0
-=========================================================
+<?php
 
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2024 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
+    use app\core\Application;
 
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +23,10 @@
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.1.0" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/js/plugins/toastr/toastr.min.css">
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/js/plugins/toastr/toastr.min.js"></script>
+    <script src="../assets/js/plugins/toastr/toastr-options.js"></script>
 </head>
 
 <body class="">
@@ -53,12 +48,30 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
                         <ul class="navbar-nav">
+                            <?php
+
+                                if(Application::$app->session->get('user')){
+
+
+                            ?>
+                            <li class="nav-item me-0">
+                                <a class="nav-link me-0" href="/logout">
+                                    <i class="ni ni-user-run opacity-6 text-dark me-1"></i>
+                                    Log out
+                                </a>
+                            </li>
+                            <?php
+
+                                } else{
+
+                            ?>
                             <li class="nav-item me-0">
                                 <a class="nav-link me-0" href="/login">
                                     <i class="fas fa-key opacity-6 text-dark me-1"></i>
                                     Sign In
                                 </a>
                             </li>
+                            <?php }?>
                             <li class="nav-item">
                                 <a class="nav-link me-0" href="/registration">
                                     <i class="fas fa-user-circle opacity-6 text-dark me-1"></i>
@@ -112,5 +125,12 @@
 <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="../assets/js/argon-dashboard.min.js?v=2.1.0"></script>
 </body>
+
+<?php
+
+Application::$app->session->showSuccessNotification();
+Application::$app->session->showErrorNotification();
+
+?>
 
 </html>

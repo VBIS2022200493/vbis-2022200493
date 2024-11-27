@@ -1,7 +1,7 @@
 <?php
 
-    use app\models\AuthModel;
-    /**  @var $params AuthModel
+    use app\models\RegistrationModel;
+    /**  @var $params RegistrationModel
      */
 
 ?>

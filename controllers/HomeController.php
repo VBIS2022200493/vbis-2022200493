@@ -18,7 +18,7 @@
 
         public function accessRole(){
 
-            return [];
+            return ['Korisnik', 'Administrator'];
 
         }
     }

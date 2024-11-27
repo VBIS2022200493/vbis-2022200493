@@ -1,5 +1,6 @@
 <?php
     namespace app\controllers;
+    use app\core\Application;
     use app\core\BaseController;
     use app\models\UserModel;
 
@@ -37,7 +38,15 @@
 
             $model = new UserModel();
             $model->mapData($_POST);
+            $model->validate();
+            if ($model->errors) {
+                Application::$app->session->set('errorNotification', 'Neuspesna promena!');
+                $this->view->render('updateUser', 'main', $model);
+                exit;
+            }
             $model->update("where user_id = $model->user_id");
+
+            Application::$app->session->set('successNotification', 'Uspena promena!');
 
             header("location:" . "/users");
 
@@ -56,16 +65,20 @@
             $model->mapData($_POST);
             $model->validate();
             if ($model->errors) {
+                Application::$app->session->set('errorNotification', 'Neuspesan kreiranje!');
                 $this->view->render('createUser', 'main', $model);
                 exit;
             }
             $model->insert();
 
+            Application::$app->session->set('successNotification', 'Uspeno kreiranje!');
+
             header("location:" . "/users");
 
         }
 
-        public function accessRole(){
+        public function accessRole(): array
+        {
 
             return ['Administrator'];
 

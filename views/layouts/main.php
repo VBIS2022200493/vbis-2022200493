@@ -1,3 +1,9 @@
+<?php
+
+    use app\core\Application;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +24,10 @@
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.1.0" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/js/plugins/toastr/toastr.min.css">
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/js/plugins/toastr/toastr.min.js"></script>
+    <script src="../assets/js/plugins/toastr/toastr-options.js"></script>
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -103,5 +113,12 @@
 <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="../assets/js/argon-dashboard.min.js?v=2.1.0"></script>
 </body>
+
+<?php
+
+    Application::$app->session->showSuccessNotification();
+    Application::$app->session->showErrorNotification();
+
+?>
 
 </html>

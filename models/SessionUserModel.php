@@ -21,7 +21,14 @@
 
             $dbResult = $this->con->query($query);
 
-            $this->mapData($dbResult->fetch_assoc());
+            $resultArray = [];
+
+            while ($result = $dbResult->fetch_assoc()){
+                $resultArray[] = $result;
+
+            }
+
+            return $resultArray;
 
         }
 
